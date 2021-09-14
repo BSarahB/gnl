@@ -9,7 +9,32 @@
 /*   Updated: 2021/09/14 03:29:01 by mbenmesb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_get_next_line.h"
+#include "get_next_line.h"
+
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	if (!n)
+		return ;
+	while (i < n)
+	{
+		((unsigned char *)s)[i] = 0;
+		i++;
+	}
+}
+
+char	*ft_strdup(const char *s)
+{
+	char	*str;
+
+	str = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	ft_strcpy(str, s);
+	return (str);
+}
 
 int	ft_extract_line(char *fd_content, char **line)
 {
@@ -71,3 +96,25 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
+/*
+int main(int argc, char **argv)
+{
+	(void) argv;
+	(void) argc;
+	char *ans;
+	int fd;
+	//fd = open("blyat2000S3.txt", O_RDWR | O_CREAT);
+//fd = open("../gnl/gnlTester/files/nl", O_RDWR);
+//fd = open("files/nl", O_RDWR);
+fd = open("../gnl/gnlTester/files/alternate_line_nl_with_nl", O_RDWR);
+
+
+
+	while ((ans = get_next_line(fd)))
+	{
+		printf(":%s:", ans);
+		free(ans);
+	}
+
+}
+*/
