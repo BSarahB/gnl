@@ -17,7 +17,6 @@ void	*ft_memmove(void *dst, void const *src, size_t len);
 char	*ft_strjoin(char *s1, char const *s2);
 char	*ft_strchr(char const *s, int c);
 size_t	ft_strlen(char const *s);
-void	*ft_memset(void *b, char c, size_t len);
 char	*ft_init_string(size_t len);
 char	*ft_strcpy(char *dst, char const *src);
 
