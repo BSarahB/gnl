@@ -61,9 +61,10 @@ int	ft_extract_line(char *fd_content, char **line)
 	}
 }
 
-int	ft_isemptystr(const char *str)
+char	*ft_free_line(char **line)
 {
-	return (!str || !str[0]);
+	free(*line);
+	return (NULL);
 }
 
 char	*get_next_line(int fd)
@@ -82,20 +83,14 @@ char	*get_next_line(int fd)
 	while (ret)
 	{
 		if (ret < 0)
-		{
-			free(line);
-			return (NULL);
-		}
+			return (ft_free_line(&line));
 		fd_tab[fd][ret] = 0;
 		if (ft_extract_line(fd_tab[fd], &line))
 			break ;
 		ret = read(fd, fd_tab[fd], BUFFER_SIZE);
 	}
-	if (!ret && ft_isemptystr(line))
-	{
-		free(line);
-		return (NULL);
-	}
+	if (!ret && (!line || !line[0]))
+		return (ft_free_line(&line));
 	return (line);
 }
 
@@ -119,4 +114,5 @@ fd = open("../gnl/gnlTester/files/alternate_line_nl_with_nl", O_RDWR);
 	}
 
 }
+
 

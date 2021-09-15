@@ -77,7 +77,9 @@ char	*ft_strcat(char *dest, char const *src)
 char	*ft_strjoin(char *s1, char const *s2)
 {
 	char	*str;
-	if (!s1 || !s2 || !(str = ft_init_string(ft_strlen(s1) + ft_strlen(s2))))
+
+	str = ft_init_string(ft_strlen(s1) + ft_strlen(s2));
+	if (!s1 || !s2 || !str)
 		return (NULL);
 	str = ft_strcat(ft_strcpy(str, s1), s2);
 	free(s1);
