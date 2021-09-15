@@ -13,7 +13,7 @@ int	ft_extract_line(char *fd_content, char **line);
 char	*ft_free_line(char **line);
 char	*get_next_line(int fd);
 void	ft_bzero(void *s, size_t len);
-size_t	ft_strlen(const char *s);
+//size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);
 char	*ft_strcat(char *dest, char const *src);
 char	*ft_strjoin(char *s1, char const *s2);
