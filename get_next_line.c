@@ -78,7 +78,8 @@ char	*get_next_line(int fd)
 	if (*fd_tab[fd])
 		if (ft_extract_line(fd_tab[fd], &line))
 			return (line);
-	while ((ret = read(fd, fd_tab[fd], BUFFER_SIZE)))
+	ret = read(fd, fd_tab[fd], BUFFER_SIZE);
+	while (ret)
 	{
 		if (ret < 0)
 		{
@@ -88,6 +89,7 @@ char	*get_next_line(int fd)
 		fd_tab[fd][ret] = 0;
 		if (ft_extract_line(fd_tab[fd], &line))
 			break ;
+		ret = read(fd, fd_tab[fd], BUFFER_SIZE);
 	}
 	if (!ret && ft_isemptystr(line))
 	{
@@ -96,7 +98,7 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
-/*
+
 int main(int argc, char **argv)
 {
 	(void) argv;
@@ -117,4 +119,4 @@ fd = open("../gnl/gnlTester/files/alternate_line_nl_with_nl", O_RDWR);
 	}
 
 }
-*/
+
