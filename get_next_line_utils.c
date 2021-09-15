@@ -15,16 +15,6 @@ char	*ft_strcpy(char *dst, char const *src)
 	return (dst);
 }
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
 char *ft_init_string(size_t len)
 {
 	char	*str;
@@ -77,8 +67,16 @@ char	*ft_strcat(char *dest, char const *src)
 char	*ft_strjoin(char *s1, char const *s2)
 {
 	char	*str;
+	size_t	i;
+	size_t	j;
 
-	str = ft_init_string(ft_strlen(s1) + ft_strlen(s2));
+	i = 0;
+	j = 0;
+	while (s1[i])
+		i++;
+	while (s2[j])
+		j++;
+	str = ft_init_string(i + j);
 	if (!s1 || !s2 || !str)
 		return (NULL);
 	str = ft_strcat(ft_strcpy(str, s1), s2);

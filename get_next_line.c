@@ -28,8 +28,12 @@ void	ft_bzero(void *s, size_t n)
 char	*ft_strdup(const char *s)
 {
 	char	*str;
+	size_t	i;
 
-	str = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+	i = 0;
+	while (s[i])
+		i++;
+	str = (char *)malloc((i + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	ft_strcpy(str, s);
@@ -93,7 +97,7 @@ char	*get_next_line(int fd)
 		return (ft_free_line(&line));
 	return (line);
 }
-
+/*
 int main(int argc, char **argv)
 {
 	(void) argv;
@@ -114,5 +118,5 @@ fd = open("../gnl/gnlTester/files/alternate_line_nl_with_nl", O_RDWR);
 	}
 
 }
-
+*/
 
