@@ -1,15 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbenmesb <mbenmesb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/14 03:05:17 by mbenmesb          #+#    #+#             */
-/*   Updated: 2021/09/14 03:29:01 by mbenmesb         ###   ########.fr       */
+/*   Created: 2021/09/19 22:56:12 by mbenmesb          #+#    #+#             */
+/*   Updated: 2021/09/19 22:58:15 by mbenmesb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -97,25 +97,3 @@ char	*get_next_line(int fd)
 		return (ft_free_line(&line));
 	return (line);
 }
-/*
-int main(int argc, char **argv)
-{
-	(void) argv;
-	(void) argc;
-	char *ans;
-	int fd;
-	//fd = open("blyat2000S3.txt", O_RDWR | O_CREAT);
-//fd = open("../gnl/gnlTester/files/nl", O_RDWR);
-//fd = open("files/nl", O_RDWR);
-fd = open("../gnl/gnlTester/files/big_line_no_nl", O_RDWR);
-
-
-
-	while ((ans = get_next_line(fd)))
-	{
-		printf(":%s:", ans);
-		free(ans);
-	}
-
-}
-*/

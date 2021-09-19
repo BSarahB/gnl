@@ -1,15 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbenmesb <mbenmesb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/15 22:43:55 by mbenmesb          #+#    #+#             */
-/*   Updated: 2021/09/15 22:44:06 by mbenmesb         ###   ########.fr       */
+/*   Created: 2021/09/19 23:07:35 by mbenmesb          #+#    #+#             */
+/*   Updated: 2021/09/19 23:07:40 by mbenmesb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_strcpy(char *dst, char const *src)
 {
