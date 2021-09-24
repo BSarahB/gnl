@@ -97,19 +97,3 @@ char	*get_next_line(int fd)
 		return (ft_free_line(&line));
 	return (line);
 }
-int main(int argc, char **argv)
-{
-		(void) argv;
-		(void) argc;
-		char *ans;
-		int fd;
-		//fd = open("blyat2000S3.txt", O_RDWR | O_CREAT);
-//fd = open("../gnl/gnlTester/files/nl", O_RDWR);
-//fd = open("files/nl", O_RDWR);
-fd = open("../gnl/gnlTester/files/big_line_no_nl", O_RDWR);
-		while ((ans = get_next_line(fd)))
-		{
-				printf(":%s:", ans);
-				free(ans);
-		}
-}
