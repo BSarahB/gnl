@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define FD_SIZE 140
+# define FD_SIZE 2048
 
 # include <stdio.h>
 # include <sys/types.h>
