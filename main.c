@@ -3,19 +3,29 @@
 int main(int argc, char **argv)
 {
 //lecture fd depuis stdin entree standard
- 	//(void) argv;
+ 	(void) argv;
         (void) argc;
         char *ans;
         int fd;
-       
-fd = open(argv[1], O_RDWR);
-printf("fd stdin : %d", fd);
+
+	if (argc > 1)
+	{      
+		fd = open(argv[1], O_RDWR);
+		
+	}
+	else 
+		fd = 0;
+
+	printf("fd stdin : %d", fd);
         while ((ans = get_next_line(fd)))
         {
                 printf(":%s:", ans);
                 free(ans);
         }
 
+
+
+/*
 fd = open("../gnl/gnlTester/files/big_line_no_nl", O_RDWR);
 printf("fd big_line_no_nl : %d", fd);
         while ((ans = get_next_line(fd)))
@@ -23,6 +33,7 @@ printf("fd big_line_no_nl : %d", fd);
                 printf(":%s:", ans);
                 free(ans);
         }
+*/
 /*
 //lecture fd depuis fichier
         (void) argv;
